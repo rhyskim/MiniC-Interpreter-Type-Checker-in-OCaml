@@ -1,0 +1,56 @@
+(include_subdirs unqualified)
+
+(library
+ (name ast)
+ (modules ast))
+
+(library
+ (name Value)
+ (modules Value))
+
+(library
+ (name fstore)
+ (modules fstore)
+ (libraries ast))
+
+(library
+ (name AddrManager)
+ (modules AddrManager))
+
+(library
+ (name Mem)
+ (modules Mem)
+ (libraries Value LocalTEnv GlobalTEnv))
+
+(library
+ (name LocalTEnv)
+ (modules LocalTEnv)
+ (libraries ast))
+
+(library
+ (name GlobalTEnv)
+ (modules GlobalTEnv)
+ (libraries ast))
+
+(library
+ (name hw14_interp)
+ (modules hw14_interp)
+ (libraries ast fstore Value Mem AddrManager LocalTEnv GlobalTEnv)
+ (preprocess (pps bisect_ppx)))
+
+(library
+ (name hw14_tc)
+ (modules hw14_tc)
+ (libraries ast Value LocalTEnv GlobalTEnv)
+ (preprocess (pps bisect_ppx)))
+
+(library
+ (name parserlib)
+ (modules lexer parser parserMain)
+ (libraries ast))
+
+(executables
+ (names hw14_test)
+ (modules hw14_test)
+ (libraries ast Value Mem AddrManager LocalTEnv GlobalTEnv hw14_interp hw14_tc parserlib)
+ (preprocess (pps bisect_ppx)))

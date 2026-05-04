@@ -33,14 +33,14 @@
  (libraries ast))
 
 (library
- (name hw14_interp)
- (modules hw14_interp)
+ (name interp)
+ (modules interp)
  (libraries ast fstore Value Mem AddrManager LocalTEnv GlobalTEnv)
  (preprocess (pps bisect_ppx)))
 
 (library
- (name hw14_tc)
- (modules hw14_tc)
+ (name tc)
+ (modules tc)
  (libraries ast Value LocalTEnv GlobalTEnv)
  (preprocess (pps bisect_ppx)))
 

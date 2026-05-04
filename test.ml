@@ -31,7 +31,6 @@ let () =
   let mem2 = interp_prog prog2 in
   print_endline ("[if stmt and loop] " ^ show_mem mem2)
 
-
 let () =
   let prog3 =
     Program ([],

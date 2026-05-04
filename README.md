@@ -29,4 +29,4 @@
 dune build
 
 # 테스트 실행
-dune exec ./hw14_test.exe
+dune exec ./test.exe

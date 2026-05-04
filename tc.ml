@@ -2,7 +2,6 @@
 open Ast
 open GlobalTEnv
 open LocalTEnv
-
 let rec tc_expr tenv lenv = function
   | Num _ -> TInt
   | Bool _ -> TBool

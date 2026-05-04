@@ -50,7 +50,7 @@
  (libraries ast))
 
 (executables
- (names hw14_test)
- (modules hw14_test)
+ (names test)
+ (modules test)
  (libraries ast Value Mem AddrManager LocalTEnv GlobalTEnv hw14_interp hw14_tc parserlib)
  (preprocess (pps bisect_ppx)))

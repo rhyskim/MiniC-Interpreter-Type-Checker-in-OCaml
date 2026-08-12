@@ -8,3 +8,5 @@ _build/
 *.cmx
 *.o
 .merlin
+bisect*.coverage
+_coverage/
